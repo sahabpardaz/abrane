@@ -27,7 +27,7 @@ import java.util.HashMap;
  */
 public class Main {
 
-    public static final String KAFKA_SERVERS = "stream-11:9092,stream-21:9092";
+    public static final String KAFKA_SERVERS = "kafka-1:9092,kafka-2:9092";
 
     // One kafkaProducer per executor is enough since it is thread-safe
     public static class KafkaWriter {

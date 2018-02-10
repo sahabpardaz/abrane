@@ -16,8 +16,6 @@ import org.apache.spark.streaming.kafka010.KafkaUtils;
 import org.apache.spark.streaming.kafka010.LocationStrategies;
 import org.apache.spark.streaming.kafka010.OffsetRange;
 
-import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 
@@ -64,6 +62,8 @@ public class Main {
          * You can run the driver locally too by enabling the blow line. Just ensure that your dns
          * search domain is set to your-name.abrane.ir or change KAFKA_SERVERS to
          * stream-11.your-name.abrane.ir:9092,...
+         * Also you might need to change your pom.xml and change provided scope to compile
+         * temporarily
          */
         //sparkConf.setMaster("local[2]");
         try (JavaStreamingContext streamingContext = new JavaStreamingContext(
@@ -74,7 +74,7 @@ public class Main {
             kafkaConsumerParam.put("key.deserializer", StringDeserializer.class);
             kafkaConsumerParam.put("value.deserializer", StringDeserializer.class);
             kafkaConsumerParam.put("group.id", "k2k");
-            kafkaConsumerParam.put("auto.offset.reset", "earliest");
+            kafkaConsumerParam.put("auto.offset.reset", "latest");
             // To guarantee at least once we need to set this to false
             kafkaConsumerParam.put("enable.auto.commit", false);
 

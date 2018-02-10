@@ -4,12 +4,12 @@ Abrane is a big-data as a service cloud which provides you with the required pla
 
 ## Getting Started
 ### Connecting to Abrane
-You can connect to Abrane using a VPN connection. Create a VPN connection with the L2TP as the protocol and provided credentials to "abrane.ir". To test your setup ping master-11.your-name.abrane.ir. For your convinice, please set your search domain to your-name.abrane.ir on this connection. You must now be able to ping master-11 with success. In the reset of this guide we assume such a setup or else append your-name.abrane.ir to the hostnames.
+You can connect to Abrane using a VPN connection. Create a VPN connection with the L2TP as the protocol and provided credentials to "abrane.ir". To test your setup ping check-ping.your-name.abrane.ir. For your convinice, please set your search domain to your-name.abrane.ir on this connection. You must now be able to ping check-ping with success. In the reset of this guide we assume such a setup or else append your-name.abrane.ir to the hostnames.
 
 Note: After connecting to Abrane, your machine must be able to route 172.{16,17,18}.0.0/16 traffic through the VPN. If you have a different setup (e.g. a docker or vm bridge interface on these subnets) please correct your routing rules.
 
 ### A Step-by-Step guide to run a sample application
-Now let's create a sample spark application and deploy it to the Abrane. In this application we want to consume received messages from a kafka-topic and echo them to another kafka-topic.
+Now let's create a sample Spark application and deploy it to the Abrane. In this application we want to consume received messages from a Kafka topic and echo them to another Kafka topic.
 
 1. Input
 
@@ -72,8 +72,8 @@ The following services are currently provided in Abrane.
 * REST: http://kafka/api/v2 ([Guide](https://docs.confluent.io/current/kafka-rest/docs/api.html#api-v2)) (will be available soon)
 
 ### HDFS
-* Installed Version: 2.83
-* Namenodes address (inside of cluster): hdfs-1:8020,hdfs-2:8020
+* Installed Version: 2.8.3
+* Namenodes address (inside of cluster): hdfs-cluster:8020
 * REST: http://hdfs/api/v1 ([Guide](https://hadoop.apache.org/docs/r2.8.3/hadoop-project-dist/hadoop-hdfs/WebHDFS.html))
 
 ### Spark

@@ -4,7 +4,10 @@ Abrane is a big-data as a service cloud which provides you with the required pla
 
 ## Getting Started
 ### Connecting to Abrane
-You must connect to Abrane using a VPN connection. Create a VPN connection with the L2TP/IPSec as the protocol and provided credentials to "demo.abrane.ir". To test your setup ping check-ping.your-name.abrane.ir. For your convinice, please set your search domain to your-name.abrane.ir on this connection. You must now be able to ping check-ping with success and open http://dashboard in your brower. In the reset of this guide we assume such a setup or else append your-name.abrane.ir to the hostnames.
+You must connect to Abrane using a VPN connection. 
+Create a VPN connection with the L2TP/IPSec as the protocol and provided credentials to "demo.abrane.ir". You can find the details [here](vpn/README.md).
+To test your setup ping check-ping.your-domain.abrane.ir.
+For your convinice, please set your search domain to your-domain.abrane.ir on this connection. You must now be able to ping check-ping with success and open http://dashboard in your brower. In the reset of this guide we assume such a setup or else append your-domain.abrane.ir to the hostnames.
 
 Note: After connecting to Abrane, your machine must be able to route 172.{16,17,18}.0.0/16 traffic through the VPN. If you have a different setup (e.g. a docker or vm bridge interface on these subnets) please correct your routing rules.
 
@@ -80,9 +83,9 @@ The following services are currently provided in Abrane (you can view them in ht
 
 ### Spark
 * Installed version: 2.3.2
-* REST: http://spark/api/v1 ([Guide](https://gist.github.com/arturmkrtchyan/5d8559b2911ac951d34a))
 * Master UI: http://spark-master/
 * History Server UI: http://spark-history/
+* REST: http://spark/api/v1 ([Guide](https://gist.github.com/arturmkrtchyan/5d8559b2911ac951d34a))
 
 ### Zeppelin
 * Installed version: 0.8.0

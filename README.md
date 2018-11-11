@@ -4,7 +4,7 @@ Abrane is a big-data as a service cloud which provides you with the required pla
 
 ## Getting Started
 ### Connecting to Abrane
-You can connect to Abrane using a VPN connection. Create a VPN connection with the L2TP as the protocol and provided credentials to "abrane.ir". To test your setup ping check-ping.your-name.abrane.ir. For your convinice, please set your search domain to your-name.abrane.ir on this connection. You must now be able to ping check-ping with success. In the reset of this guide we assume such a setup or else append your-name.abrane.ir to the hostnames.
+You must connect to Abrane using a VPN connection. Create a VPN connection with the L2TP/IPSec as the protocol and provided credentials to "demo.abrane.ir". To test your setup ping check-ping.your-name.abrane.ir. For your convinice, please set your search domain to your-name.abrane.ir on this connection. You must now be able to ping check-ping with success and open http://dashboard in your brower. In the reset of this guide we assume such a setup or else append your-name.abrane.ir to the hostnames.
 
 Note: After connecting to Abrane, your machine must be able to route 172.{16,17,18}.0.0/16 traffic through the VPN. If you have a different setup (e.g. a docker or vm bridge interface on these subnets) please correct your routing rules.
 
@@ -64,20 +64,34 @@ Now sending some input from your producer, you must see them reprinted in the co
 
 
 ## Services
-The following services are currently provided in Abrane.
+The following services are currently provided in Abrane (you can view them in http://dashboard).
 
 ### Kafka
-* Installed Version: 0.10.2.1
+* Installed version: 0.10.2.2
 * Brokers address: kafka-1:9092,kafka-2:9092
+* Kafka manager: http://kafka-manager
 * REST: http://kafka/api/v2 ([Guide](https://docs.confluent.io/current/kafka-rest/docs/api.html#api-v2)) (will be available soon)
 
 ### HDFS
-* Installed Version: 2.8.3
-* Namenodes address (inside of cluster): hdfs-cluster:8020
-* REST: http://hdfs/api/v1 ([Guide](https://hadoop.apache.org/docs/r2.8.3/hadoop-project-dist/hadoop-hdfs/WebHDFS.html))
+* Installed version: 2.7.7
+* Namenodes service address (inside of cluster): nn-cluster:8020
+* Namenode UI: http://namenode
+* REST: http://hdfs/api/v1 ([Guide](https://hadoop.apache.org/docs/r2.7.6/hadoop-project-dist/hadoop-hdfs/WebHDFS.html))
 
 ### Spark
-* Installed Version: 2.2.1
+* Installed version: 2.3.2
 * REST: http://spark/api/v1 ([Guide](https://gist.github.com/arturmkrtchyan/5d8559b2911ac951d34a))
 * Master UI: http://spark-master/
 * History Server UI: http://spark-history/
+
+### Zeppelin
+* Installed version: 0.8.0
+* http://zeppelin
+
+### Kibana
+* Installed version: 6.2.4
+* http://kibana
+
+### Zabbix
+* Installed version: 3.4.14
+* http://zabbix

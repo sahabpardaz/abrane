@@ -2,6 +2,7 @@ package ir.sahab.abrane.sample.spark.k2k;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.producer.KafkaProducer;
+import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -65,7 +66,7 @@ public class Main {
          * Also you might need to change your pom.xml and change provided scope to compile
          * temporarily
          */
-        //sparkConf.setMaster("local[2]");
+        // sparkConf.setMaster("local[2]");
         try (JavaStreamingContext streamingContext = new JavaStreamingContext(
                      sparkConf, new Duration(1000))) {
 
@@ -73,7 +74,7 @@ public class Main {
             kafkaConsumerParam.put("bootstrap.servers", KAFKA_SERVERS);
             kafkaConsumerParam.put("key.deserializer", StringDeserializer.class);
             kafkaConsumerParam.put("value.deserializer", StringDeserializer.class);
-            kafkaConsumerParam.put("group.id", "k2k");
+            kafkaConsumerParam.put("group.id", "k2k2");
             kafkaConsumerParam.put("auto.offset.reset", "latest");
             // To guarantee at least once we need to set this to false
             kafkaConsumerParam.put("enable.auto.commit", false);

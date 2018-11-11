@@ -2,7 +2,10 @@
 target/
 *.iml
 *.class
-
+*.project
+.settings/
+.classpath
+.vscode/
 *.swp
 *.retry
 .vagrant/

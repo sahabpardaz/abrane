@@ -5,6 +5,8 @@ if [[ $# -ne 2 ]]; then
   exit 1
 fi
 
+set -e
+
 curl -X POST http://spark/api/v1/submissions/create --header "Content-Type:application/json;charset=UTF-8" --data '{
   "action" : "CreateSubmissionRequest",
   "appArgs" : [ "sample-app-arg" ],
